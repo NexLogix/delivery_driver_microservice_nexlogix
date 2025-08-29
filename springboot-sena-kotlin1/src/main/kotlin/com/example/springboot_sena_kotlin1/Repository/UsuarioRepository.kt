@@ -82,7 +82,7 @@ aaaaaaaaaaaaaaaaaaaaaaa
         * */
 
         /*fun activarUsuario(): {
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakjjjjjjjjjjjjjjjjjjjjjjjjjj
         }
         */
 
