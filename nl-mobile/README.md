@@ -1,7 +1,7 @@
 # NexLogix - Sistema de Gestión de Entregas para Conductores
 
 <div align="center">
-  <img src="src/assets/logo.png" alt="NexLogix Logo" width="300"/>
+  <img src="assets/src/assets/logo.png" alt="NexLogix Logo" width="300"/>
 </div>
 
 <div align="center">
