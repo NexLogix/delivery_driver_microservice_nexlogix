@@ -1,16 +1,18 @@
 .dashboard-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     background-color: #1a2035;
     color: #cdd3e0;
+    width: 100%;
   }
   
   .dashboard-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 20px 20px;
     background-color: #1e2a47;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
@@ -39,9 +41,9 @@
   
   .dashboard-main {
     flex-grow: 1;
-    padding: 40px;
+    padding: 20px;
     display: grid;
-    gap: 30px;
+    gap: 20px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
   

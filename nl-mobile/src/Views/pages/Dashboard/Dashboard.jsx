@@ -41,7 +41,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
-        <h1>Dashboard del Conductor</h1>
+        <h1>Dashboard Conductor</h1>
         <MenuDesplegable 
           onReportes={handleReportes}
           onCerrarSesion={handleCerrarSesion}

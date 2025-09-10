@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #1a2035;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,11 +19,18 @@
   box-sizing: border-box;
 }
 
+#root {
+  min-height: 100vh;
+  background-color: #1a2035;
+  width: 100%;
+}
+
 html {
   margin: 0 !important;
   padding: 0 !important;
   width: 100% !important;
   height: 100% !important;
+  background-color: #1a2035;
 }
 
 a {
@@ -42,6 +49,7 @@ body {
   height: 100vh !important;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #1a2035;
 }
 
 h1 {
