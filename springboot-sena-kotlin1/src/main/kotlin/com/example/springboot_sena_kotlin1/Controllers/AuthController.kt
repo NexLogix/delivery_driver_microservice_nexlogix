@@ -1,14 +1,10 @@
 package com.example.springboot_sena_kotlin1.Controllers
 
 import org.slf4j.LoggerFactory
-import org.springframework.core.env.Environment
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestHeader
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
+import com.example.springboot_sena_kotlin1.Config.UtilJWT
 import com.example.springboot_sena_kotlin1.Services.AuthLoginService
 import com.example.springboot_sena_kotlin1.models.DTOS.Auth.AuthLoginDTO
 import org.springframework.security.core.context.SecurityContextHolder
@@ -17,7 +13,7 @@ import org.springframework.security.core.context.SecurityContextHolder
 @RequestMapping("/auth")
 class AuthController(
     private val authLoginService: AuthLoginService,
-    private val env: Environment // inyectar Environment para diagnóstico
+    private val utilJWT: UtilJWT // inyectar UtilJWT para diagnóstico
 ) {
     private val log = LoggerFactory.getLogger(AuthController::class.java)
 
