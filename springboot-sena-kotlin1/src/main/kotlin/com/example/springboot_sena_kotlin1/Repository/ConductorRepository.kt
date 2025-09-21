@@ -1,10 +1,5 @@
 package com.example.springboot_sena_kotlin1.Repository
 
-import com.example.springboot_sena_kotlin1.models.DTOS.UpdateConductorDTO
-import com.example.springboot_sena_kotlin1.models.DTOS.CrearConductorDTO
-
-
-
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.stereotype.Repository
 
@@ -12,9 +7,7 @@ import org.springframework.stereotype.Repository
 class ConductorRepository(
     private val jdbcTemplate: JdbcTemplate
 ) {
-
-
-    fun crearConductor(dto: CrearConductorDTO, hashedPassword: String): Int {
+    /*fun crearConductor(dto: CrearConductorDTO, hashedPassword: String): Int {
         val sql = """
             INSERT INTO conductores (
                 role,
@@ -90,6 +83,5 @@ class ConductorRepository(
             id,
             id
         )
-    }
-
+    }*/
 }
