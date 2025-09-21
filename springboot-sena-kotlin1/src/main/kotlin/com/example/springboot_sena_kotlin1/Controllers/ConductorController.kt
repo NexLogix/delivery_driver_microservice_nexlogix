@@ -2,8 +2,6 @@ package com.example.springboot_sena_kotlin1.Controllers
 
 import org.springframework.web.bind.annotation.*
 import com.example.springboot_sena_kotlin1.Services.ConductorService
-import com.example.springboot_sena_kotlin1.models.DTOS.CrearConductorDTO
-import com.example.springboot_sena_kotlin1.models.DTOS.UpdateConductorDTO
 import org.springframework.http.ResponseEntity
 
 @RestController
@@ -13,7 +11,7 @@ class ConductorController(
 ) {
     // @GetMapping
 
-    @PostMapping
+    /*@PostMapping
     fun crearConductor(@RequestBody nuevoConductor: CrearConductorDTO): ResponseEntity<String> {
         return try {
             conductorService.crearConductor(nuevoConductor)
@@ -36,5 +34,7 @@ class ConductorController(
             ResponseEntity.status(500).body("Error al actualizar conductor: ${ex.message}")
         }
     }
+    *
+     */
 
 }
