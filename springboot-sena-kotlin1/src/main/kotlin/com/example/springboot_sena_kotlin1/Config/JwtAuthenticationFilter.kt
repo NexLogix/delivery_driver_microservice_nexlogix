@@ -1,8 +1,7 @@
 package com.example.springboot_sena_kotlin1.Config
 
+import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
-import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.web.filter.OncePerRequestFilter
 import jakarta.servlet.FilterChain
 import jakarta.servlet.ServletException
@@ -12,8 +11,11 @@ import java.io.IOException
 
 @Component
 class JwtAuthenticationFilter(
+    // mantenemos la dependencia para cuando se reactive, pero no la usamos ahora
     private val utilJWT: UtilJWT
 ) : OncePerRequestFilter() {
+
+    private val log = LoggerFactory.getLogger(JwtAuthenticationFilter::class.java)
 
     @Throws(ServletException::class, IOException::class)
     override fun doFilterInternal(
@@ -21,15 +23,8 @@ class JwtAuthenticationFilter(
         response: HttpServletResponse,
         filterChain: FilterChain
     ) {
-        val header = request.getHeader("Authorization")
-        val token = header?.takeIf { it.startsWith("Bearer ") }?.removePrefix("Bearer ")?.trim()
-
-        if (!token.isNullOrBlank() && utilJWT.validateToken(token)) {
-            val username = utilJWT.extractUsername(token)
-            val authentication = UsernamePasswordAuthenticationToken(username, null, emptyList())
-            SecurityContextHolder.getContext().authentication = authentication
-        }
-
+        // No-op: no validamos aquí mientras debuggeamos
+        log.debug("JwtAuthenticationFilter no-op activo (debug). Path: ${request.servletPath}")
         filterChain.doFilter(request, response)
     }
 }

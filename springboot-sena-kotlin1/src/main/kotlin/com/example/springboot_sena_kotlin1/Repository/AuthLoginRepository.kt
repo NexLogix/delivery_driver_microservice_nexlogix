@@ -12,11 +12,6 @@ class AuthLoginRepository(
     private val passwordEncoder: PasswordEncoder,
     private val utilJWT: UtilJWT
 ) {
-
-    /**
-     * Intenta autenticar y devuelve un token JWT si las credenciales son válidas.
-     * Retorna null si el usuario no existe o la contraseña no coincide.
-     */
     fun loginByEmail(email: String, rawPassword: String): String? {
         val sql = "SELECT contrasena FROM conductores WHERE c_email = ?"
         return try {
@@ -31,9 +26,6 @@ class AuthLoginRepository(
         }
     }
 
-    /**
-     * Alternativa: permitir login por documento o email
-     */
     fun login(identifier: String, rawPassword: String): String? {
         // si identifier contiene '@' se asume email, si no se intenta por c_documentoIdentidad
         val (sql, param) = if (identifier.contains("@")) {
@@ -41,7 +33,6 @@ class AuthLoginRepository(
         } else {
             "SELECT contrasena FROM conductores WHERE c_documentoIdentidad = ?" to identifier
         }
-
         return try {
             val encodedPassword = jdbcTemplate.queryForObject(sql, String::class.java, param) ?: return null
             if (passwordEncoder.matches(rawPassword, encodedPassword)) {
