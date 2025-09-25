@@ -21,12 +21,7 @@
 			</intent-filter>
 		</activity>
 
-		<!-- Segunda actividad -->
-		<activity android:name=".ProductosActivity"
-				  android:exported="true">
-		</activity>
-
-		<!-- Actividad conductor (mock) -->
+		<!-- Actividad conductor -->
 		<activity android:name=".DriverActivity"
 				  android:exported="true">
 		</activity>
