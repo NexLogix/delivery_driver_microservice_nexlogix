@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.appinterface.Adapter.Models.Ruta
 import com.example.appinterface.R
 
 class RoutesAdapter(private val items: List<Ruta>) : RecyclerView.Adapter<RoutesAdapter.VH>() {

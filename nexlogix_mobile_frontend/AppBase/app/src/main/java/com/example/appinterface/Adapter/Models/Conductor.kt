@@ -1,4 +1,4 @@
-package com.example.appinterface.Adapter
+package com.example.appinterface.Adapter.Models
 
 import com.google.gson.annotations.SerializedName
 
