@@ -11,10 +11,12 @@ import android.widget.Spinner
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appinterface.Adapter.VehiclesAdapter
-import com.example.appinterface.Adapter.Vehiculo
+import com.example.appinterface.Adapter.Models.Vehiculo
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.appinterface.Adapter.Models.Conductor
+import com.example.appinterface.Adapter.Models.Ruta
 import com.example.appinterface.Api.ApiServicesKotlin
 import com.example.appinterface.Api.LogoutResponse
 import com.example.appinterface.Api.RetrofitInstance
@@ -139,8 +141,8 @@ class DriverActivity : AppCompatActivity() {
         val api = RetrofitInstance.api2kotlin
         val call = api.getRutasAsignadas("Bearer $token")
 
-        call.enqueue(object : Callback<List<com.example.appinterface.Adapter.Ruta>> {
-            override fun onResponse(call: Call<List<com.example.appinterface.Adapter.Ruta>>, response: Response<List<com.example.appinterface.Adapter.Ruta>>) {
+        call.enqueue(object : Callback<List<Ruta>> {
+            override fun onResponse(call: Call<List<Ruta>>, response: Response<List<Ruta>>) {
                 if (response.isSuccessful) {
                     val lista = response.body() ?: emptyList()
 
@@ -169,12 +171,12 @@ class DriverActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<List<com.example.appinterface.Adapter.Ruta>>, t: Throwable) {
+            override fun onFailure(call: Call<List<Ruta>>, t: Throwable) {
                 sectionContent.text = "⚠️ No se pudo conectar al servidor: ${t.message}\nMostrando datos de ejemplo."
 
                 // Mostrar mock de ejemplo basado en el JSON proporcionado
                 val ejemplo = listOf(
-                    com.example.appinterface.Adapter.Ruta(
+                    Ruta(
                         documentoIdentidad = "1154789123",
                         email = "josenorbert1959@gmail.com",
                         placa = "QPO89E",
@@ -190,7 +192,7 @@ class DriverActivity : AppCompatActivity() {
                         estadoRuta = "EN_BODEGA",
                         descripcion = "Esta es una descripción extensa del recorrido programado para la ruta nacional A12."
                     ),
-                    com.example.appinterface.Adapter.Ruta(
+                    Ruta(
                         documentoIdentidad = "1154789123",
                         email = "josenorbert1959@gmail.com",
                         placa = "QPO89E",
@@ -285,8 +287,8 @@ class DriverActivity : AppCompatActivity() {
         val api = RetrofitInstance.api2kotlin
         val call = api.getConductorInfo("Bearer $token")
 
-        call.enqueue(object : Callback<com.example.appinterface.Adapter.Conductor> {
-            override fun onResponse(call: Call<com.example.appinterface.Adapter.Conductor>, response: Response<com.example.appinterface.Adapter.Conductor>) {
+        call.enqueue(object : Callback<Conductor> {
+            override fun onResponse(call: Call<Conductor>, response: Response<Conductor>) {
                 if (response.isSuccessful) {
                     val conductor = response.body()
                     if (conductor != null) {
@@ -299,10 +301,10 @@ class DriverActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<com.example.appinterface.Adapter.Conductor>, t: Throwable) {
+            override fun onFailure(call: Call<Conductor>, t: Throwable) {
                 sectionContent.text = "⚠️ No se pudo conectar al servidor: ${t.message}\nMostrando datos de ejemplo."
                 // Mostrar ejemplo mock (según JSON proporcionado)
-                val ejemplo = com.example.appinterface.Adapter.Conductor(
+                val ejemplo = Conductor(
                     idConductor = 30,
                     role = "CONDUCTOR",
                     documentoIdentidad = "1154789123",
@@ -320,7 +322,7 @@ class DriverActivity : AppCompatActivity() {
         })
     }
 
-    private fun mostrarConductor(conductor: com.example.appinterface.Adapter.Conductor) {
+    private fun mostrarConductor(conductor: Conductor) {
         val sb = StringBuilder()
         sb.append("Conductor:\n\n")
         sb.append("Role: ${conductor.role}\n")

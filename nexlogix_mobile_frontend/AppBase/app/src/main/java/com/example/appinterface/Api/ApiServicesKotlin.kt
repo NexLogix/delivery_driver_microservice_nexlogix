@@ -5,7 +5,9 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Header
-import com.example.appinterface.Adapter.Conductor
+import com.example.appinterface.Adapter.Models.Conductor
+import com.example.appinterface.Adapter.Models.Ruta
+import com.example.appinterface.Adapter.Models.Vehiculo
 
 data class AuthRequest(val email: String, val contrasena: String)
 data class AuthResponse(val token: String?)
@@ -24,9 +26,9 @@ interface ApiServicesKotlin {
 
     // Endpoint para obtener vehículos asignados (requiere JWT en header)
     @GET("vehiculos_asignados")
-    fun getVehiculosAsignados(@Header("Authorization") authorization: String): Call<List<com.example.appinterface.Adapter.Vehiculo>>
+    fun getVehiculosAsignados(@Header("Authorization") authorization: String): Call<List<Vehiculo>>
 
     // Endpoint para obtener rutas asignadas (requiere JWT en header)
     @GET("rutas_asignadas")
-    fun getRutasAsignadas(@Header("Authorization") authorization: String): Call<List<com.example.appinterface.Adapter.Ruta>>
+    fun getRutasAsignadas(@Header("Authorization") authorization: String): Call<List<Ruta>>
 }

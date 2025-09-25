@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.appinterface.Adapter.Models.Vehiculo
 import com.example.appinterface.R
 
 class VehiclesAdapter(private val items: List<Vehiculo>) : RecyclerView.Adapter<VehiclesAdapter.VH>() {
