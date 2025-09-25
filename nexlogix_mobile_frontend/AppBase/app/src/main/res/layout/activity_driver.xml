@@ -86,6 +86,7 @@
 
     <!-- Content Area -->
     <ScrollView
+        android:id="@+id/content_scroll"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
@@ -152,6 +153,17 @@
                 android:visibility="gone"
                 android:overScrollMode="always"
                 android:layout_marginTop="8dp" />
+
+            <!-- Botón para volver al menú -->
+            <Button
+                android:id="@+id/back_to_menu_button"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Volver al menú"
+                android:layout_marginTop="12dp"
+                android:visibility="gone"
+                android:backgroundTint="@color/telegram_blue"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 

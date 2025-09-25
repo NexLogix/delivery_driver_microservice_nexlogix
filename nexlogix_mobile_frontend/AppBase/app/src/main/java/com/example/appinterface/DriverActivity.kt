@@ -36,9 +36,41 @@ class DriverActivity : AppCompatActivity() {
 
         sectionContent = findViewById(R.id.section_content)
 
+        // Botón para volver al menú
+        val backToMenuBtn = findViewById<Button>(R.id.back_to_menu_button)
+        backToMenuBtn.setOnClickListener {
+            // Volver a la vista principal del activity (ocultar listas y mostrar la tarjeta del conductor)
+            volverAlMenu()
+        }
+
         setupMenuButtons()
         // Cargar información del conductor al iniciar
         cargarConductorInfo()
+    }
+
+    // Restaurar vista principal del DriverActivity
+    private fun volverAlMenu() {
+        // Ocultar listas y botón, desplazar el ScrollView para mostrar el área principal ("aquí")
+        val vehiclesList = findViewById<RecyclerView>(R.id.vehicles_list)
+        val routesList = findViewById<RecyclerView>(R.id.routes_list)
+        val backToMenuBtn = findViewById<Button>(R.id.back_to_menu_button)
+        val conductorCard = findViewById<View>(R.id.conductor_card)
+        val contentScroll = findViewById<android.widget.ScrollView>(R.id.content_scroll)
+
+        vehiclesList.visibility = View.GONE
+        routesList.visibility = View.GONE
+        backToMenuBtn.visibility = View.GONE
+        conductorCard.visibility = View.VISIBLE
+
+        // Smooth scroll until el conductor_card quede visible en la zona central/baja
+        // Centrar la tarjeta del conductor en el ScrollView
+        conductorCard.post {
+            val scrollHeight = contentScroll.height
+            val targetTop = conductorCard.top
+            val targetHeight = conductorCard.height
+            val scrollTo = (targetTop - (scrollHeight / 2) + (targetHeight / 2)).coerceAtLeast(0)
+            contentScroll.smoothScrollTo(0, scrollTo)
+        }
     }
 
     
@@ -92,6 +124,7 @@ class DriverActivity : AppCompatActivity() {
         val routesList = findViewById<RecyclerView>(R.id.routes_list)
         val vehiclesList = findViewById<RecyclerView>(R.id.vehicles_list)
         val conductorCard = findViewById<View>(R.id.conductor_card)
+        val backToMenuBtn = findViewById<Button>(R.id.back_to_menu_button)
 
         sectionContent.text = "🔄 Cargando rutas asignadas..."
 
@@ -116,6 +149,7 @@ class DriverActivity : AppCompatActivity() {
                         routesList.visibility = View.GONE
                         vehiclesList.visibility = View.GONE
                         conductorCard.visibility = View.VISIBLE
+                        backToMenuBtn.visibility = View.GONE
                     } else {
                         // Mostrar RecyclerView con datos
                         routesList.layoutManager = LinearLayoutManager(this@DriverActivity)
@@ -123,6 +157,7 @@ class DriverActivity : AppCompatActivity() {
                         routesList.visibility = View.VISIBLE
                         vehiclesList.visibility = View.GONE
                         conductorCard.visibility = View.GONE
+                        backToMenuBtn.visibility = View.VISIBLE
                         sectionContent.text = ""
                     }
                 } else {
@@ -130,6 +165,7 @@ class DriverActivity : AppCompatActivity() {
                     routesList.visibility = View.GONE
                     vehiclesList.visibility = View.GONE
                     conductorCard.visibility = View.VISIBLE
+                    backToMenuBtn.visibility = View.GONE
                 }
             }
 
@@ -177,6 +213,7 @@ class DriverActivity : AppCompatActivity() {
                 routesList.visibility = View.VISIBLE
                 vehiclesList.visibility = View.GONE
                 conductorCard.visibility = View.GONE
+                backToMenuBtn.visibility = View.VISIBLE
             }
         })
     }
@@ -303,6 +340,7 @@ class DriverActivity : AppCompatActivity() {
         val vehiclesList = findViewById<RecyclerView>(R.id.vehicles_list)
         val routesList = findViewById<RecyclerView>(R.id.routes_list)
         val conductorCard = findViewById<View>(R.id.conductor_card)
+        val backToMenuBtn = findViewById<Button>(R.id.back_to_menu_button)
 
         sectionContent.text = "🔄 Cargando vehículos asignados..."
 
@@ -328,6 +366,7 @@ class DriverActivity : AppCompatActivity() {
                         vehiclesList.visibility = View.GONE
                         routesList.visibility = View.GONE
                         conductorCard.visibility = View.VISIBLE
+                        backToMenuBtn.visibility = View.GONE
                     } else {
                         // Mostrar RecyclerView con datos
                         vehiclesList.layoutManager = LinearLayoutManager(this@DriverActivity)
@@ -335,6 +374,7 @@ class DriverActivity : AppCompatActivity() {
                         vehiclesList.visibility = View.VISIBLE
                         routesList.visibility = View.GONE
                         conductorCard.visibility = View.GONE
+                        backToMenuBtn.visibility = View.VISIBLE
                         sectionContent.text = ""
                     }
                 } else {
@@ -342,6 +382,7 @@ class DriverActivity : AppCompatActivity() {
                     vehiclesList.visibility = View.GONE
                     routesList.visibility = View.GONE
                     conductorCard.visibility = View.VISIBLE
+                    backToMenuBtn.visibility = View.GONE
                 }
             }
 
@@ -381,6 +422,7 @@ class DriverActivity : AppCompatActivity() {
                 vehiclesList.visibility = View.VISIBLE
                 routesList.visibility = View.GONE
                 conductorCard.visibility = View.GONE
+                backToMenuBtn.visibility = View.VISIBLE
             }
         })
     }
