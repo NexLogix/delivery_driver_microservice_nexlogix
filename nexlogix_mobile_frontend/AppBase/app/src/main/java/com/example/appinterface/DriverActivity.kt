@@ -41,7 +41,6 @@ class DriverActivity : AppCompatActivity() {
         // Botón para volver al menú
         val backToMenuBtn = findViewById<Button>(R.id.back_to_menu_button)
         backToMenuBtn.setOnClickListener {
-            // Volver a la vista principal del activity (ocultar listas y mostrar la tarjeta del conductor)
             volverAlMenu()
         }
 
@@ -64,7 +63,6 @@ class DriverActivity : AppCompatActivity() {
         backToMenuBtn.visibility = View.GONE
         conductorCard.visibility = View.VISIBLE
 
-        // Smooth scroll until el conductor_card quede visible en la zona central/baja
         // Centrar la tarjeta del conductor en el ScrollView
         conductorCard.post {
             val scrollHeight = contentScroll.height
@@ -80,8 +78,6 @@ class DriverActivity : AppCompatActivity() {
         // Hacer el área del menú clickeable para mostrar opciones
         val menuArea = findViewById<android.widget.LinearLayout>(R.id.menu_area)
         val menuIcon = findViewById<android.widget.ImageView>(R.id.menu_icon)
-        
-        // Hacer todo el área del menú clickeable
         val clickListener = View.OnClickListener {
             showMenuOptions()
         }
@@ -89,7 +85,8 @@ class DriverActivity : AppCompatActivity() {
         menuArea?.setOnClickListener(clickListener)
         menuIcon.setOnClickListener(clickListener)
     }
-    
+
+    // Menu opciones concutor
     private fun showMenuOptions() {
         val builder = android.app.AlertDialog.Builder(this)
         builder.setTitle("Seleccionar opción")
@@ -121,7 +118,7 @@ class DriverActivity : AppCompatActivity() {
         builder.show()
     }
 
-    // ======= Cargar rutas asignadas ======
+    // ASIGNACION RUTAS
     private fun cargarRutasAsignadas() {
         val routesList = findViewById<RecyclerView>(R.id.routes_list)
         val vehiclesList = findViewById<RecyclerView>(R.id.vehicles_list)
@@ -174,44 +171,7 @@ class DriverActivity : AppCompatActivity() {
             override fun onFailure(call: Call<List<Ruta>>, t: Throwable) {
                 sectionContent.text = "⚠️ No se pudo conectar al servidor: ${t.message}\nMostrando datos de ejemplo."
 
-                // Mostrar mock de ejemplo basado en el JSON proporcionado
-                val ejemplo = listOf(
-                    Ruta(
-                        documentoIdentidad = "1154789123",
-                        email = "josenorbert1959@gmail.com",
-                        placa = "QPO89E",
-                        marcaVehiculo = "Fiat - Strada",
-                        tipoVehiculo = "B1",
-                        capacidad = 0,
-                        estadoVehiculo = "disponible",
-                        fechaAsignacionInicio = "2025-09-15T19:00:00",
-                        fechaAsignacionFinalizacion = "2025-10-14T19:00:00",
-                        nombreRuta = "A14",
-                        horaInicioRuta = "",
-                        horaFinalizacionRuta = "",
-                        estadoRuta = "EN_BODEGA",
-                        descripcion = "Esta es una descripción extensa del recorrido programado para la ruta nacional A12."
-                    ),
-                    Ruta(
-                        documentoIdentidad = "1154789123",
-                        email = "josenorbert1959@gmail.com",
-                        placa = "QPO89E",
-                        marcaVehiculo = "Fiat - Strada",
-                        tipoVehiculo = "B1",
-                        capacidad = 0,
-                        estadoVehiculo = "disponible",
-                        fechaAsignacionInicio = "2025-09-15T19:00:00",
-                        fechaAsignacionFinalizacion = "2025-10-14T19:00:00",
-                        nombreRuta = "A14",
-                        horaInicioRuta = "",
-                        horaFinalizacionRuta = "",
-                        estadoRuta = "EN_BODEGA",
-                        descripcion = "Esta es una descripción extensa del recorrido programado para la ruta nacional A12."
-                    )
-                )
-
                 routesList.layoutManager = LinearLayoutManager(this@DriverActivity)
-                routesList.adapter = com.example.appinterface.Adapter.RoutesAdapter(ejemplo)
                 routesList.visibility = View.VISIBLE
                 vehiclesList.visibility = View.GONE
                 conductorCard.visibility = View.GONE
@@ -303,21 +263,6 @@ class DriverActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<Conductor>, t: Throwable) {
                 sectionContent.text = "⚠️ No se pudo conectar al servidor: ${t.message}\nMostrando datos de ejemplo."
-                // Mostrar ejemplo mock (según JSON proporcionado)
-                val ejemplo = Conductor(
-                    idConductor = 30,
-                    role = "CONDUCTOR",
-                    documentoIdentidad = "1154789123",
-                    email = "josenorbert1959@gmail.com",
-                    numContacto = "3208529272",
-                    direccionResidencia = "calle XD",
-                    licencia = "GTP78Q",
-                    tipoLicencia = "C1",
-                    vigenciaLicencia = "2027-09-17",
-                    idEstadoConductor = 1,
-                    idEstadoUsuarioControl = 1
-                )
-                mostrarConductor(ejemplo)
             }
         })
     }
@@ -391,36 +336,7 @@ class DriverActivity : AppCompatActivity() {
             override fun onFailure(call: Call<List<Vehiculo>>, t: Throwable) {
                 sectionContent.text = "⚠️ No se pudo conectar al servidor: ${t.message}\nMostrando datos de ejemplo."
 
-                // Mostrar mock de ejemplo
-                val ejemplo = listOf(
-                    Vehiculo(
-                        documentoIdentidad = "1154789123",
-                        email = "josenorbert1959@gmail.com",
-                        placa = "ABC-123",
-                        marcaVehiculo = "Hino",
-                        tipoVehiculo = "Camión",
-                        capacidad = 1200,
-                        estadoVehiculo = "Disponible",
-                        ultimoMantenimiento = "2023-04-01",
-                        fechaAsignacionInicio = "2024-06-12",
-                        fechaEntregaVehiculo = null
-                    ),
-                    Vehiculo(
-                        documentoIdentidad = "1154789123",
-                        email = "josenorbert1959@gmail.com",
-                        placa = "XYZ-789",
-                        marcaVehiculo = "Mercedes",
-                        tipoVehiculo = "Tráiler",
-                        capacidad = 2000,
-                        estadoVehiculo = "En servicio",
-                        ultimoMantenimiento = "2024-01-15",
-                        fechaAsignacionInicio = "2024-06-10",
-                        fechaEntregaVehiculo = null
-                    )
-                )
-
                 vehiclesList.layoutManager = LinearLayoutManager(this@DriverActivity)
-                vehiclesList.adapter = VehiclesAdapter(ejemplo)
                 vehiclesList.visibility = View.VISIBLE
                 routesList.visibility = View.GONE
                 conductorCard.visibility = View.GONE
