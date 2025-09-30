@@ -51,25 +51,27 @@ class DriverActivity : AppCompatActivity() {
 
     // Restaurar vista principal del DriverActivity
     private fun volverAlMenu() {
-        // Ocultar listas y botón, desplazar el ScrollView para mostrar el área principal ("aquí")
+        // Ocultar listas y botón
         val vehiclesList = findViewById<RecyclerView>(R.id.vehicles_list)
         val routesList = findViewById<RecyclerView>(R.id.routes_list)
         val backToMenuBtn = findViewById<Button>(R.id.back_to_menu_button)
         val conductorCard = findViewById<View>(R.id.conductor_card)
         val contentScroll = findViewById<android.widget.ScrollView>(R.id.content_scroll)
 
+        // Ocultar listas y botón de volver
         vehiclesList.visibility = View.GONE
         routesList.visibility = View.GONE
         backToMenuBtn.visibility = View.GONE
+        
+        // Mostrar la tarjeta principal del conductor
         conductorCard.visibility = View.VISIBLE
+        
+        // Recargar la información del conductor para mostrar el contenido principal
+        cargarConductorInfo()
 
-        // Centrar la tarjeta del conductor en el ScrollView
-        conductorCard.post {
-            val scrollHeight = contentScroll.height
-            val targetTop = conductorCard.top
-            val targetHeight = conductorCard.height
-            val scrollTo = (targetTop - (scrollHeight / 2) + (targetHeight / 2)).coerceAtLeast(0)
-            contentScroll.smoothScrollTo(0, scrollTo)
+        // Scroll al inicio para mostrar el contenido principal
+        contentScroll.post {
+            contentScroll.smoothScrollTo(0, 0)
         }
     }
 

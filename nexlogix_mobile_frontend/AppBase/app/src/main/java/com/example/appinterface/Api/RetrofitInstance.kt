@@ -8,7 +8,6 @@ import com.google.gson.GsonBuilder
 import java.util.concurrent.TimeUnit
 
 object RetrofitInstance {
-    private const val BASE_URL = "https://dog.ceo/api/"
     // Ajusta el puerto según tu servidor local. Para backend en localhost:8081 usar 10.0.2.2 desde emulador
     const val BASE_URL_APIKOTLIN = "http://10.0.2.2:8081/"
 
