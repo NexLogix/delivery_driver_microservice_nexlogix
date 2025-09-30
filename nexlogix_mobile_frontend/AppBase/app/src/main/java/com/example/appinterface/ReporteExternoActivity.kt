@@ -1,14 +1,22 @@
 package com.example.appinterface
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.appinterface.Adapter.Models.ReporteExterno
+import com.example.appinterface.Api.ApiServicesKotlin
+import com.example.appinterface.Api.RetrofitInstance
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ReporteExternoActivity : AppCompatActivity() {
     
@@ -55,16 +63,75 @@ class ReporteExternoActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // TODO: Aquí se puede implementar el envío del reporte al servidor
-            // Por ahora solo mostramos un mensaje de confirmación
-            Toast.makeText(this, "Reporte enviado exitosamente", Toast.LENGTH_LONG).show()
-            
-            // Limpiar campos después del envío
-            emailField.text?.clear()
-            descriptionField.text?.clear()
-            
-            // Opcional: cerrar la activity después de enviar
-            // finish()
+            // Crear objeto ReporteExterno
+            val reporte = ReporteExterno(
+                idcategoriaReportes = 1, // Por defecto categoría 1
+                descripcion = description,
+                idusuarios = email
+            )
+
+            // Enviar reporte al backend
+            enviarReporte(reporte, emailField, descriptionField)
         }
+    }
+
+    private fun enviarReporte(reporte: ReporteExterno, emailField: TextInputEditText, descriptionField: TextInputEditText) {
+        Log.d("ReporteExterno", "Enviando reporte: ${reporte.descripcion}")
+        
+        val api = RetrofitInstance.api2kotlin
+        val call = api.enviarReporteExterno(reporte)
+        
+        call.enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                Log.d("ReporteExterno", "Response code: ${response.code()}")
+                
+                if (response.isSuccessful) {
+                    try {
+                        val message = response.body()?.string() ?: "Reporte enviado exitosamente"
+                        Log.d("ReporteExterno", "Reporte enviado exitosamente: $message")
+                        
+                        Toast.makeText(this@ReporteExternoActivity, "Reporte enviado exitosamente", Toast.LENGTH_LONG).show()
+                        
+                        // Limpiar campos después del envío exitoso
+                        emailField.text?.clear()
+                        descriptionField.text?.clear()
+                        
+                    } catch (e: Exception) {
+                        Log.e("ReporteExterno", "Error al leer respuesta: ${e.message}")
+                        Toast.makeText(this@ReporteExternoActivity, "Reporte enviado exitosamente", Toast.LENGTH_LONG).show()
+                        
+                        // Limpiar campos de todas formas
+                        emailField.text?.clear()
+                        descriptionField.text?.clear()
+                    }
+                    
+                } else {
+                    val errorBody = response.errorBody()?.string()
+                    Log.e("ReporteExterno", "Error ${response.code()}: $errorBody")
+                    
+                    val errorMessage = when (response.code()) {
+                        400 -> "Datos inválidos. Verifica la información"
+                        500 -> "Error interno del servidor"
+                        else -> "Error al enviar reporte: ${response.code()}"
+                    }
+                    
+                    Toast.makeText(this@ReporteExternoActivity, errorMessage, Toast.LENGTH_LONG).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                Log.e("ReporteExterno", "Error de red: ${t.message}", t)
+                
+                val errorMessage = when {
+                    t.message?.contains("failed to connect", ignoreCase = true) == true -> 
+                        "No se pudo conectar al servidor. Verifica que esté corriendo en localhost:8081"
+                    t.message?.contains("timeout", ignoreCase = true) == true -> 
+                        "Tiempo de espera agotado. El servidor no responde"
+                    else -> "Error de conexión: ${t.message}"
+                }
+                
+                Toast.makeText(this@ReporteExternoActivity, errorMessage, Toast.LENGTH_LONG).show()
+            }
+        })
     }
 }

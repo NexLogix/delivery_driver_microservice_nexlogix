@@ -4,6 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import com.google.gson.GsonBuilder
 import java.util.concurrent.TimeUnit
 
 object RetrofitInstance {
@@ -25,10 +26,15 @@ object RetrofitInstance {
     }
 
     val api2kotlin: ApiServicesKotlin by lazy {
+        // Configurar Gson con setLenient para manejar JSON menos estricto del backend
+        val gson = GsonBuilder()
+            .setLenient()
+            .create()
+            
         Retrofit.Builder()
             .baseUrl(BASE_URL_APIKOTLIN)
             .client(httpClient)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson)) // Convertir respuestas a objetos Kotlin
             .build()
             .create(ApiServicesKotlin::class.java)
     }
