@@ -88,12 +88,12 @@ class DriverActivity : AppCompatActivity() {
         menuIcon.setOnClickListener(clickListener)
     }
 
-    // Menu opciones concutor
+    // Menu opciones conductor
     private fun showMenuOptions() {
         val builder = android.app.AlertDialog.Builder(this)
         builder.setTitle("Seleccionar opción")
         
-        val options = arrayOf("🚗 Rutas", "🚚 Vehículos", "📊 Reportes")
+        val options = arrayOf("🚗 Rutas", "🚚 Vehículos")
         
         builder.setItems(options) { dialog, which ->
             when (which) {
@@ -104,10 +104,6 @@ class DriverActivity : AppCompatActivity() {
                 1 -> {
                     // Vehículos - cargar desde API
                     cargarVehiculosAsignados()
-                }
-                2 -> {
-                    // Generar reportes - preserve original functionality
-                    sectionContent.text = "📊 Reporte generado exitosamente\n\n✅ Rutas completadas: 3\n✅ Vehículos utilizados: 2\n✅ Fecha: ${java.text.SimpleDateFormat("dd/MM/yyyy HH:mm", java.util.Locale.getDefault()).format(java.util.Date())}\n\nEstado: Listo para envío"
                 }
             }
             dialog.dismiss()
