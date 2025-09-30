@@ -25,6 +25,11 @@
 		<activity android:name=".DriverActivity"
 				  android:exported="true">
 		</activity>
+
+		<!-- Actividad reporte externo -->
+		<activity android:name=".ReporteExternoActivity"
+				  android:exported="true">
+		</activity>
 	</application>
 
 </manifest>

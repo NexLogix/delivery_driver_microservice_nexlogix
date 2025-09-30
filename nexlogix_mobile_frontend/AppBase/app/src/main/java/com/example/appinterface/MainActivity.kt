@@ -36,7 +36,14 @@ class MainActivity : AppCompatActivity() {
         val username = findViewById<EditText>(R.id.username)
         val password = findViewById<EditText>(R.id.password)
         val loginBtn = findViewById<Button>(R.id.buttonLogin)
+        val reporteBtn = findViewById<Button>(R.id.button3)
         val errorText = findViewById<TextView>(R.id.login_error)
+
+        // Botón Hacer Reporte
+        reporteBtn.setOnClickListener {
+            val intent = Intent(this, ReporteExternoActivity::class.java)
+            startActivity(intent)
+        }
 
         loginBtn.setOnClickListener {
             val user = username.text.toString().trim()
