@@ -46,12 +46,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b747a747-ee6f-40e8-89cc-66f63dddd686" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/src/main/kotlin/com/example/springboot_sena_kotlin1/Repository/ReportesInternos/ReportesInternosRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/src/main/kotlin/com/example/springboot_sena_kotlin1/models/Classes/ReportesInternos/CategoriaReportes.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/src/main/kotlin/com/example/springboot_sena_kotlin1/models/Classes/ReportesInternos/ReportesInternos.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b747a747-ee6f-40e8-89cc-66f63dddd686" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

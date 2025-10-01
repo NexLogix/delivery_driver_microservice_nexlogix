@@ -29,10 +29,12 @@ class ReportesInternosRepository(
     
     fun obtenerReportesPorConductor(idConductor: Long): List<ReportesInternos> {
         val sql = """
-            SELECT r.idReporte, r.idCategoriaReportes, r.descripcion, r.fechaCreacion, r.idConductor
-            FROM reportesConductores r
-            WHERE r.idConductor = ?
-            ORDER BY r.fechaCreacion DESC 
+            SELECT idReporte, idCategoriaReportes, descripcion, fechaCreacion, idConductor
+            FROM reportesConductores
+            WHERE idConductor = ?
+              AND fechaCreacion >= NOW() - INTERVAL 7 DAY
+              AND idCategoriaReportes <> 1
+            ORDER BY fechaCreacion DESC
         """
         return jdbcTemplate.query(sql, arrayOf(idConductor)) { rs, _ ->
             ReportesInternos(
@@ -86,7 +88,13 @@ class ReportesInternosRepository(
             params.add(idReporte)
             params.add(idConductor)
             
-            val sql = "UPDATE reportesConductores SET ${updates.joinToString(", ")} WHERE idReporte = ? AND idConductor = ?"
+            val sql = """
+                UPDATE reportesConductores 
+                SET ${updates.joinToString(", ")} 
+                WHERE idReporte = ? 
+                  AND idConductor = ?
+                  AND TIMESTAMPDIFF(HOUR, fechaCreacion, NOW()) <= 24
+            """
             val result = jdbcTemplate.update(sql, *params.toTypedArray())
             result > 0
         } catch (e: Exception) {
@@ -97,7 +105,12 @@ class ReportesInternosRepository(
     
     fun eliminarReporte(idReporte: Long, idConductor: Long): Boolean {
         return try {
-            val sql = "DELETE FROM reportesConductores WHERE idReporte = ? AND idConductor = ?"
+            val sql = """
+                DELETE FROM reportesConductores 
+                WHERE idReporte = ? 
+                  AND idConductor = ?
+                  AND TIMESTAMPDIFF(HOUR, fechaCreacion, NOW()) <= 24
+            """
             val result = jdbcTemplate.update(sql, idReporte, idConductor)
             result > 0
         } catch (e: Exception) {
