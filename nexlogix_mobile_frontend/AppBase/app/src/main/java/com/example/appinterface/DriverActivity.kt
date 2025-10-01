@@ -93,7 +93,7 @@ class DriverActivity : AppCompatActivity() {
         val builder = android.app.AlertDialog.Builder(this)
         builder.setTitle("Seleccionar opción")
         
-        val options = arrayOf("🚗 Rutas", "🚚 Vehículos")
+        val options = arrayOf("🚗 Rutas", "🚚 Vehículos", "📊 Reportes")
         
         builder.setItems(options) { dialog, which ->
             when (which) {
@@ -104,6 +104,11 @@ class DriverActivity : AppCompatActivity() {
                 1 -> {
                     // Vehículos - cargar desde API
                     cargarVehiculosAsignados()
+                }
+                2 -> {
+                    // Reportes internos - navegar a nueva Activity
+                    val intent = Intent(this, ReportesInternosActivity::class.java)
+                    startActivity(intent)
                 }
             }
             dialog.dismiss()

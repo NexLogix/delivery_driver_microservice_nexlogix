@@ -15,6 +15,16 @@
           <theme>@style/Theme.AppInterface</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_reportes_internos.xml">
+        <config>
+          <theme>@style/Theme.AppInterface</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/item_reporte_interno.xml">
+        <config>
+          <theme>@style/Theme.AppInterface</theme>
+        </config>
+      </layout>
       <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/reporte_externo.xml">
         <config>
           <theme>@style/Theme.AppInterface</theme>
@@ -46,7 +56,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b747a747-ee6f-40e8-89cc-66f63dddd686" name="Changes" comment="" />
+    <list default="true" id="b747a747-ee6f-40e8-89cc-66f63dddd686" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/appinterface/Api/ApiServicesKotlin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/appinterface/Api/ApiServicesKotlin.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/appinterface/DriverActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/appinterface/DriverActivity.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -30,6 +30,11 @@
 		<activity android:name=".ReporteExternoActivity"
 				  android:exported="true">
 		</activity>
+
+		<!-- Actividad reportes internos -->
+		<activity android:name=".ReportesInternosActivity"
+				  android:exported="true">
+		</activity>
 	</application>
 
 </manifest>
