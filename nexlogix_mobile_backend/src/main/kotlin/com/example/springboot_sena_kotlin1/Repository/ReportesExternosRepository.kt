@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> f544c1b4ca2c13d2a04995797db5e043b7584959
 package com.example.springboot_sena_kotlin1.Repository
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.stereotype.Repository
