@@ -32,7 +32,7 @@ class ReportesInternosRepository(
             SELECT r.idReporte, r.idCategoriaReportes, r.descripcion, r.fechaCreacion, r.idConductor
             FROM reportesConductores r
             WHERE r.idConductor = ?
-            ORDER BY r.fechaCreacion DESC
+            ORDER BY r.fechaCreacion DESC 
         """
         return jdbcTemplate.query(sql, arrayOf(idConductor)) { rs, _ ->
             ReportesInternos(
