@@ -19,6 +19,7 @@ import com.example.appinterface.Api.RetrofitInstance
 import com.example.appinterface.Api.CategoriaReporte
 import com.example.appinterface.Api.ReporteInternoRequest
 import com.example.appinterface.Api.ReporteInternoResponse
+import com.example.appinterface.Api.SuccessResponse
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -118,7 +119,7 @@ class ReportesInternosActivity : AppCompatActivity() {
     }
 
     private fun setupCategoriaDropdown() {
-        val nombresCategoria = categorias.map { it.nombre }.toTypedArray()
+        val nombresCategoria = categorias.map { it.nombreCategoria }.toTypedArray()
         val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, nombresCategoria)
         dropdownCategoria.setAdapter(adapter)
     }
@@ -180,9 +181,9 @@ class ReportesInternosActivity : AppCompatActivity() {
                         
                         // Convertir ReporteInternoResponse a ReporteInterno
                         val reportesConvertidos = reportesResponse.map { reporteResponse ->
-                            val categoria = categorias.find { it.id == reporteResponse.idCategoriaReportes }?.nombre ?: "Sin categoría"
+                            val categoria = categorias.find { it.idcategoria == reporteResponse.idCategoriaReportes }?.nombreCategoria ?: reporteResponse.nombreCategoria ?: "Sin categoría"
                             ReporteInterno(
-                                id = reporteResponse.id,
+                                id = reporteResponse.idReporte,
                                 idCategoriaReportes = reporteResponse.idCategoriaReportes,
                                 categoria = categoria,
                                 descripcion = reporteResponse.descripcion,
@@ -207,8 +208,12 @@ class ReportesInternosActivity : AppCompatActivity() {
         })
     }
 
-    private fun formatearFecha(fechaISO: String): String {
+    private fun formatearFecha(fechaISO: String?): String {
         return try {
+            if (fechaISO.isNullOrEmpty()) {
+                return SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+            }
+            
             // Formato de entrada del backend (ISO)
             val formatoEntrada = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
             // Formato de salida para mostrar
@@ -217,8 +222,17 @@ class ReportesInternosActivity : AppCompatActivity() {
             val fecha = formatoEntrada.parse(fechaISO)
             fecha?.let { formatoSalida.format(it) } ?: fechaISO
         } catch (e: Exception) {
-            // Si falla el parseo, retornar solo la fecha
-            fechaISO.split("T")[0]
+            Log.e("ReportesInternosActivity", "Error al formatear fecha: $fechaISO", e)
+            // Si falla el parseo, retornar solo la fecha o fecha actual
+            try {
+                if (!fechaISO.isNullOrEmpty() && fechaISO.contains("T")) {
+                    fechaISO.split("T")[0]
+                } else {
+                    SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+                }
+            } catch (ex: Exception) {
+                SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+            }
         }
     }
 
@@ -245,14 +259,14 @@ class ReportesInternosActivity : AppCompatActivity() {
         val descripcion = etDescripcion.text.toString().trim()
 
         if (validarCampos(categoriaNombre, descripcion)) {
-            val categoriaSeleccionada = categorias.find { it.nombre == categoriaNombre }
+            val categoriaSeleccionada = categorias.find { it.nombreCategoria == categoriaNombre }
             
             if (categoriaSeleccionada == null && categorias.isNotEmpty()) {
                 Toast.makeText(this, "Seleccione una categoría válida", Toast.LENGTH_SHORT).show()
                 return
             }
 
-            val idCategoria = categoriaSeleccionada?.id ?: 1 // Fallback en caso de error
+            val idCategoria = categoriaSeleccionada?.idcategoria ?: 1 // Fallback en caso de error
             val request = ReporteInternoRequest(
                 idCategoriaReportes = idCategoria,
                 descripcion = descripcion
@@ -269,22 +283,15 @@ class ReportesInternosActivity : AppCompatActivity() {
     private fun crearReporte(request: ReporteInternoRequest) {
         val call = RetrofitInstance.api2kotlin.crearReporteInterno("Bearer $authToken", request)
         
-        call.enqueue(object : Callback<ReporteInternoResponse> {
-            override fun onResponse(call: Call<ReporteInternoResponse>, response: Response<ReporteInternoResponse>) {
+        call.enqueue(object : Callback<SuccessResponse> {
+            override fun onResponse(call: Call<SuccessResponse>, response: Response<SuccessResponse>) {
                 if (response.isSuccessful) {
-                    response.body()?.let { reporteResponse ->
-                        val categoria = categorias.find { it.id == reporteResponse.idCategoriaReportes }?.nombre ?: "Sin categoría"
-                        val nuevoReporte = ReporteInterno(
-                            id = reporteResponse.id,
-                            idCategoriaReportes = reporteResponse.idCategoriaReportes,
-                            categoria = categoria,
-                            descripcion = reporteResponse.descripcion,
-                            fechaCreacion = formatearFecha(reporteResponse.fechaCreacion)
-                        )
-                        
-                        adapter.addReporte(nuevoReporte)
+                    response.body()?.let { successResponse ->
+                        Log.d("ReportesInternosActivity", "Reporte creado: ${successResponse.message}")
                         Toast.makeText(this@ReportesInternosActivity, "Reporte creado exitosamente", Toast.LENGTH_SHORT).show()
                         cancelarFormulario()
+                        // Recargar la lista completa desde el servidor
+                        cargarReportes()
                     }
                 } else {
                     Log.e("ReportesInternosActivity", "Error al crear reporte: ${response.code()}")
@@ -292,7 +299,7 @@ class ReportesInternosActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<ReporteInternoResponse>, t: Throwable) {
+            override fun onFailure(call: Call<SuccessResponse>, t: Throwable) {
                 Log.e("ReportesInternosActivity", "Error de conexión al crear reporte", t)
                 Toast.makeText(this@ReportesInternosActivity, "Error de conexión", Toast.LENGTH_SHORT).show()
             }
@@ -302,22 +309,15 @@ class ReportesInternosActivity : AppCompatActivity() {
     private fun actualizarReporte(id: Int, request: ReporteInternoRequest) {
         val call = RetrofitInstance.api2kotlin.actualizarReporteInterno("Bearer $authToken", id, request)
         
-        call.enqueue(object : Callback<ReporteInternoResponse> {
-            override fun onResponse(call: Call<ReporteInternoResponse>, response: Response<ReporteInternoResponse>) {
+        call.enqueue(object : Callback<SuccessResponse> {
+            override fun onResponse(call: Call<SuccessResponse>, response: Response<SuccessResponse>) {
                 if (response.isSuccessful) {
-                    response.body()?.let { reporteResponse ->
-                        val categoria = categorias.find { it.id == reporteResponse.idCategoriaReportes }?.nombre ?: "Sin categoría"
-                        val reporteActualizado = ReporteInterno(
-                            id = reporteResponse.id,
-                            idCategoriaReportes = reporteResponse.idCategoriaReportes,
-                            categoria = categoria,
-                            descripcion = reporteResponse.descripcion,
-                            fechaCreacion = formatearFecha(reporteResponse.fechaCreacion)
-                        )
-                        
-                        adapter.updateReporte(reporteActualizado)
+                    response.body()?.let { successResponse ->
+                        Log.d("ReportesInternosActivity", "Reporte actualizado: ${successResponse.message}")
                         Toast.makeText(this@ReportesInternosActivity, "Reporte actualizado exitosamente", Toast.LENGTH_SHORT).show()
                         cancelarFormulario()
+                        // Recargar la lista completa desde el servidor
+                        cargarReportes()
                     }
                 } else {
                     Log.e("ReportesInternosActivity", "Error al actualizar reporte: ${response.code()}")
@@ -325,7 +325,7 @@ class ReportesInternosActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<ReporteInternoResponse>, t: Throwable) {
+            override fun onFailure(call: Call<SuccessResponse>, t: Throwable) {
                 Log.e("ReportesInternosActivity", "Error de conexión al actualizar reporte", t)
                 Toast.makeText(this@ReportesInternosActivity, "Error de conexión", Toast.LENGTH_SHORT).show()
             }

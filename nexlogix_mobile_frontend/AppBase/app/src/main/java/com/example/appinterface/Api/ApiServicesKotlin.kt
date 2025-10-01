@@ -18,9 +18,10 @@ import com.example.appinterface.Adapter.Models.ReporteInterno
 data class AuthRequest(val email: String, val contrasena: String)
 data class AuthResponse(val token: String?)
 data class LogoutResponse(val message: String)
-data class CategoriaReporte(val id: Int, val nombre: String)
+data class CategoriaReporte(val idcategoria: Int, val nombreCategoria: String)
 data class ReporteInternoRequest(val idCategoriaReportes: Int, val descripcion: String)
-data class ReporteInternoResponse(val id: Int, val idCategoriaReportes: Int, val descripcion: String, val fechaCreacion: String)
+data class ReporteInternoResponse(val idReporte: Int, val idCategoriaReportes: Int, val nombreCategoria: String?, val descripcion: String, val fechaCreacion: String?, val idConductor: Int)
+data class SuccessResponse(val message: String)
 
 interface ApiServicesKotlin {
     @POST("auth/login")
@@ -50,10 +51,10 @@ interface ApiServicesKotlin {
     fun getReportesInternos(@Header("Authorization") authorization: String): Call<List<ReporteInternoResponse>>
 
     @POST("reportes_internos")
-    fun crearReporteInterno(@Header("Authorization") authorization: String, @Body reporte: ReporteInternoRequest): Call<ReporteInternoResponse>
+    fun crearReporteInterno(@Header("Authorization") authorization: String, @Body reporte: ReporteInternoRequest): Call<SuccessResponse>
 
     @PATCH("reportes_internos/{id}")
-    fun actualizarReporteInterno(@Header("Authorization") authorization: String, @Path("id") id: Int, @Body reporte: ReporteInternoRequest): Call<ReporteInternoResponse>
+    fun actualizarReporteInterno(@Header("Authorization") authorization: String, @Path("id") id: Int, @Body reporte: ReporteInternoRequest): Call<SuccessResponse>
 
     @DELETE("reportes_internos/{id}")
     fun eliminarReporteInterno(@Header("Authorization") authorization: String, @Path("id") id: Int): Call<ResponseBody>
