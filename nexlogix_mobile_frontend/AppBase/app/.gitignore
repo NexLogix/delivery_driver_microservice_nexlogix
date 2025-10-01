@@ -1,1 +1,70 @@
 /build
+
+# =========================
+# IDEs
+# =========================
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# =========================
+# Gradle
+# =========================
+.gradle/
+build/
+*/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# =========================
+# Android / Kotlin
+# =========================
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.ap_
+
+# =========================
+# Logs y reportes
+# =========================
+*.log
+logs/
+hs_err_pid*
+replay_pid*
+
+# =========================
+# Archivos del sistema
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Backups temporales
+# =========================
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# =========================
+# Maven (si usas)
+# =========================
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# =========================
+# Spring Boot
+# =========================
+out/
+bin/
+*.class
+
+# =========================
+# Test / Coverage
+# =========================
+*.lcov
+coverage/
+test-output/
