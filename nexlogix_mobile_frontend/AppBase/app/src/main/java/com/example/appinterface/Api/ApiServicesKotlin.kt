@@ -18,7 +18,7 @@ data class LogoutResponse(val message: String)
 interface ApiServicesKotlin {
     @POST("auth/login")
     fun login(@Body req: AuthRequest): Call<AuthResponse>
-
+    
     @POST("auth/logout")
     fun logout(@Header("Authorization") authorization: String): Call<LogoutResponse>
 
