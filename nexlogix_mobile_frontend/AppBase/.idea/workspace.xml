@@ -47,169 +47,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b747a747-ee6f-40e8-89cc-66f63dddd686" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/.idea/copilotDiffState.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/META-INF/springboot-sena-kotlin1.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Config/JwtAuthenticationFilter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Config/JwtAuthenticationFilter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Config/SecurityConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Config/SecurityConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Config/UtilJWT.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Config/UtilJWT.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Controllers/AuthController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Controllers/AuthController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Controllers/ConductorController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Controllers/ConductorController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Controllers/ReportesExternosController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Controllers/ReportesExternosController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Controllers/RutasAsignadasController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Controllers/RutasAsignadasController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Controllers/VehiculosAsignadosController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Controllers/VehiculosAsignadosController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Repository/AuthLoginRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Repository/AuthLoginRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Repository/ConductorRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Repository/ConductorRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Repository/ReportesExternosRepository$ConductorResult.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Repository/ReportesExternosRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Repository/ReportesExternosRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Repository/RutasAsignadasRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Repository/RutasAsignadasRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Repository/VehiculosAsignadosRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Repository/VehiculosAsignadosRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Services/AuthLoginService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Services/AuthLoginService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Services/ConductorService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Services/ConductorService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Services/ReporteExternoService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Services/ReporteExternoService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Services/RutasAsignadasService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Services/RutasAsignadasService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Services/VehiculosAsignadosService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/Services/VehiculosAsignadosService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/SpringbootSenaKotlin1Application.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/SpringbootSenaKotlin1Application.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/SpringbootSenaKotlin1ApplicationKt.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/models/Classes/Conductores/Conductor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/models/Classes/Conductores/Conductor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/models/DTOS/Auth/AuthLoginDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/models/DTOS/Auth/AuthLoginDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/models/DTOS/ReportesExternos/BuscarConductorReporteExternoDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/models/DTOS/ReportesExternos/BuscarConductorReporteExternoDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/models/DTOS/ReportesExternos/ReporteExternoDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/models/DTOS/ReportesExternos/ReporteExternoDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/models/DTOS/RutasAsignadas/RutasAsignadasDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/models/DTOS/RutasAsignadas/RutasAsignadasDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/models/DTOS/VehiculosAsignados/VehiculosAsignadosDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/classes/com/example/springboot_sena_kotlin1/models/DTOS/VehiculosAsignados/VehiculosAsignadosDTO.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/target/test-classes/com/example/springboot_sena_kotlin1/SpringbootSenaKotlin1ApplicationTests.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_10_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_experimental_1_4_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_jvm_1_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_7_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_7_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_2_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_jvm_1_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_concurrent_concurrent_futures_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_concurrent_concurrent_futures_ktx_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_2_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_15_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_ktx_1_15_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_viewtree_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_dynamicanimation_dynamicanimation_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_5_4_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_6_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_6_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_6_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_6_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_savedstate_2_6_2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_resourceinspection_resourceinspection_annotation_1_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_2_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_core_1_6_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_6_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_6_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_ext_junit_1_2_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_7_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_6_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_services_storage_1_5_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_tracing_tracing_1_2_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_5_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager2_viewpager2_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_exifinterface_27_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_27_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_12_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_3_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_errorprone_error_prone_annotations_2_15_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_guava_listenablefuture_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_logging_interceptor_4_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_4_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_2_8_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_71828_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_converter_gson_2_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_retrofit_2_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_23_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_9_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_8_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk8_1_8_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_android_1_7_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_core_jvm_1_7_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/AppInterface.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/app/AppInterface.app.androidTest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/app/AppInterface.app.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/app/AppInterface.app.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/app/AppInterface.app.unitTest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/microservice_kotlin_nexlogix.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nexlogix_mobile_backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../nexlogix_mobile_backend/src/main/kotlin/com/example/springboot_sena_kotlin1/Repository/ReportesExternosRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/src/main/kotlin/com/example/springboot_sena_kotlin1/Repository/ReportesExternosRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/appinterface/Api/ApiServicesKotlin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/appinterface/Api/ApiServicesKotlin.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/src/main/kotlin/com/example/springboot_sena_kotlin1/Repository/ReportesInternos/ReportesInternosRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/src/main/kotlin/com/example/springboot_sena_kotlin1/models/Classes/ReportesInternos/CategoriaReportes.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../nexlogix_mobile_backend/src/main/kotlin/com/example/springboot_sena_kotlin1/models/Classes/ReportesInternos/ReportesInternos.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,7 +130,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
-    "git-widget-placeholder": "Merging rama__brandon__gonzalez",
+    "git-widget-placeholder": "rama__brandon__gonzalez",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/projects_dev/microservice_kotlin_nexlogix/nexlogix_mobile_frontend/AppBase",
     "settings.editor.selected.configurable": "Errors"
