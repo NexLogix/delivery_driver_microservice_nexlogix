@@ -28,6 +28,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import okhttp3.ResponseBody
 import java.text.SimpleDateFormat
+import org.json.JSONObject
 import java.util.*
 
 class ReportesInternosActivity : AppCompatActivity() {
@@ -59,6 +60,20 @@ class ReportesInternosActivity : AppCompatActivity() {
         setupButtons()
         cargarCategorias()
         cargarReportes()
+    }
+
+    private fun obtenerMensajeBackend(response: Response<*>): String {
+        return try {
+            val errorBody = response.errorBody()?.string()
+            if (errorBody != null) {
+                val errorJson = JSONObject(errorBody)
+                errorJson.getString("error")
+            } else {
+                "Error: ${response.code()}"
+            }
+        } catch (e: Exception) {
+            "Error: ${response.code()}"
+        }
     }
 
     private fun verificarToken(): Boolean {
@@ -288,14 +303,14 @@ class ReportesInternosActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     response.body()?.let { successResponse ->
                         Log.d("ReportesInternosActivity", "Reporte creado: ${successResponse.message}")
-                        Toast.makeText(this@ReportesInternosActivity, "Reporte creado exitosamente", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@ReportesInternosActivity, successResponse.message, Toast.LENGTH_SHORT).show()
                         cancelarFormulario()
-                        // Recargar la lista completa desde el servidor
                         cargarReportes()
                     }
                 } else {
+                    val mensajeError = obtenerMensajeBackend(response)
                     Log.e("ReportesInternosActivity", "Error al crear reporte: ${response.code()}")
-                    Toast.makeText(this@ReportesInternosActivity, "Error al crear reporte", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@ReportesInternosActivity, mensajeError, Toast.LENGTH_LONG).show()
                 }
             }
 
@@ -314,14 +329,14 @@ class ReportesInternosActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     response.body()?.let { successResponse ->
                         Log.d("ReportesInternosActivity", "Reporte actualizado: ${successResponse.message}")
-                        Toast.makeText(this@ReportesInternosActivity, "Reporte actualizado exitosamente", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@ReportesInternosActivity, successResponse.message, Toast.LENGTH_SHORT).show()
                         cancelarFormulario()
-                        // Recargar la lista completa desde el servidor
                         cargarReportes()
                     }
                 } else {
+                    val mensajeError = obtenerMensajeBackend(response)
                     Log.e("ReportesInternosActivity", "Error al actualizar reporte: ${response.code()}")
-                    Toast.makeText(this@ReportesInternosActivity, "Error al actualizar reporte", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@ReportesInternosActivity, mensajeError, Toast.LENGTH_LONG).show()
                 }
             }
 
@@ -376,8 +391,9 @@ class ReportesInternosActivity : AppCompatActivity() {
                     adapter.removeReporte(reporte)
                     Toast.makeText(this@ReportesInternosActivity, "Reporte eliminado exitosamente", Toast.LENGTH_SHORT).show()
                 } else {
+                    val mensajeError = obtenerMensajeBackend(response)
                     Log.e("ReportesInternosActivity", "Error al eliminar reporte: ${response.code()}")
-                    Toast.makeText(this@ReportesInternosActivity, "Error al eliminar reporte", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@ReportesInternosActivity, mensajeError, Toast.LENGTH_LONG).show()
                 }
             }
 
