@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent_teal">#0AA57A</color>
+    <color name="black">#FF000000</color>
+    <color name="gray_dark">#333333</color>
+    <color name="gray_light">#F5F5F5</color>
+    <color name="login_background">#161625</color>
+    <color name="login_text">#FFFFFFFF</color>
+    <color name="telegram_blue">#0088CC</color>
+    <color name="telegram_blue_dark">#006699</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">AppInterface</string>
+    <style name="Base.Theme.AppInterface" parent="Theme.Material3.DayNight.NoActionBar">
+		
+		<item name="colorPrimary">@color/telegram_blue</item>
+		<item name="colorPrimaryVariant">@color/telegram_blue_dark</item>
+		<item name="colorOnPrimary">@color/white</item>
+		<item name="colorSecondary">@color/telegram_blue</item>
+		<item name="colorSecondaryVariant">@color/telegram_blue_dark</item>
+		<item name="colorOnSecondary">@color/white</item>
+		<item name="android:colorBackground">@color/gray_light</item>
+		<item name="colorSurface">@color/white</item>
+		<item name="colorOnSurface">@color/gray_dark</item>
+		
+		<item name="android:statusBarColor">@color/telegram_blue_dark</item>
+		<item name="android:windowLightStatusBar">false</item>
+	</style>
+    <style name="Theme.AppInterface" parent="Base.Theme.AppInterface"/>
+</resources>

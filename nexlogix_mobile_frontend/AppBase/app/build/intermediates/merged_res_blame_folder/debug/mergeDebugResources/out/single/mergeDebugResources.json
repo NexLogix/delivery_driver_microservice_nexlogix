@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-debug-33:\\layout_reporte_externo.xml.flat",
+        "source": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-main-35:\\layout\\reporte_externo.xml"
+    },
+    {
+        "merged": "com.example.appinterface.app-debug-33:/drawable_circle_bg.xml.flat",
+        "source": "com.example.appinterface.app-main-35:/drawable/circle_bg.xml"
+    },
+    {
+        "merged": "com.example.appinterface.app-debug-33:/layout_spinner_item_navigation.xml.flat",
+        "source": "com.example.appinterface.app-main-35:/layout/spinner_item_navigation.xml"
+    },
+    {
+        "merged": "com.example.appinterface.app-debug-33:/layout_route_item.xml.flat",
+        "source": "com.example.appinterface.app-main-35:/layout/route_item.xml"
+    },
+    {
+        "merged": "com.example.appinterface.app-debug-33:/layout_activity_driver.xml.flat",
+        "source": "com.example.appinterface.app-main-35:/layout/activity_driver.xml"
+    },
+    {
+        "merged": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-debug-33:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-main-35:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-debug-33:\\drawable_circle_bg.xml.flat",
+        "source": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-main-35:\\drawable\\circle_bg.xml"
+    },
+    {
+        "merged": "com.example.appinterface.app-debug-33:/layout_vehicle_item.xml.flat",
+        "source": "com.example.appinterface.app-main-35:/layout/vehicle_item.xml"
+    },
+    {
+        "merged": "com.example.appinterface.app-debug-33:/layout_spinner_dropdown_item.xml.flat",
+        "source": "com.example.appinterface.app-main-35:/layout/spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-debug-33:\\layout_spinner_item_navigation.xml.flat",
+        "source": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-main-35:\\layout\\spinner_item_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-debug-33:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-main-35:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-debug-33:\\layout_vehicle_item.xml.flat",
+        "source": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-main-35:\\layout\\vehicle_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-debug-33:\\layout_spinner_dropdown_item.xml.flat",
+        "source": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-main-35:\\layout\\spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "com.example.appinterface.app-debug-33:/layout_reporte_externo.xml.flat",
+        "source": "com.example.appinterface.app-main-35:/layout/reporte_externo.xml"
+    },
+    {
+        "merged": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-debug-33:\\layout_activity_driver.xml.flat",
+        "source": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-main-35:\\layout\\activity_driver.xml"
+    },
+    {
+        "merged": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-debug-33:\\mipmap_nexlogix_icon.png.flat",
+        "source": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-main-35:\\mipmap\\nexlogix_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-debug-33:\\layout_route_item.xml.flat",
+        "source": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-main-35:\\layout\\route_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-debug-33:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\devel\\.gradle\\daemon\\8.13\\com.example.appinterface.app-main-35:\\xml\\backup_rules.xml"
+    }
+]

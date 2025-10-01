@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/build.gradle.kts">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/build.gradle.kts" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/kotlin/com/example/springboot/dtos/CrearConductorDTO.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/kotlin/com/example/springboot/dtos/CrearConductorDTO.kt" />
+              <option name="originalContent" value="&#10;&#10;&#10;&#10;&#10;" />
+              <option name="updatedContent" value="&#10;&#10;&#10;&#10;&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/kotlin/com/example/springboot_sena_kotlin1/Controllers/VehiculosAsignadosController.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/kotlin/com/example/springboot_sena_kotlin1/Controllers/VehiculosAsignadosController.kt" />
+              <option name="originalContent" value="package com.example.springboot_sena_kotlin1.Controllers&#10;&#10;import com.example.springboot_sena_kotlin1.Services.VehiculosAsignadosService&#10;import com.example.springboot_sena_kotlin1.models.DTOS.VehiculosAsignados.VehiculosAsignadosDTO&#10;import org.springframework.http.ResponseEntity&#10;import org.springframework.web.bind.annotation.GetMapping&#10;import org.springframework.web.bind.annotation.RequestHeader&#10;import org.springframework.web.bind.annotation.RequestMapping&#10;import org.springframework.web.bind.annotation.RestController&#10;&#10;@RestController&#10;@RequestMapping(&quot;/vehiculos-asignados&quot;)&#10;class VehiculosAsignadosController(private val service: VehiculosAsignadosService) {&#10;&#10;    @GetMapping&#10;    fun getVehiculosAsignados(@RequestHeader(value = &quot;Authorization&quot;, required = false) authHeader: String?): ResponseEntity&lt;Any&gt; {&#10;        val (status, body) = service.getVehiculosAsignadosByToken(authHeader)&#10;        return ResponseEntity.status(status).body(body)&#10;    }&#10;}&#10;&#10;" />
+              <option name="updatedContent" value="package com.example.springboot_sena_kotlin1.Controllers&#10;&#10;import com.example.springboot_sena_kotlin1.Services.VehiculosAsignadosService&#10;import org.springframework.http.ResponseEntity&#10;import org.springframework.web.bind.annotation.GetMapping&#10;import org.springframework.web.bind.annotation.RequestHeader&#10;import org.springframework.web.bind.annotation.RequestMapping&#10;import org.springframework.web.bind.annotation.RestController&#10;&#10;@RestController&#10;@RequestMapping(&quot;/vehiculos_asignados&quot;)&#10;class VehiculosAsignadosController(private val service: VehiculosAsignadosService) {&#10;&#10;    @GetMapping&#10;    fun vehiculosAsignados(@RequestHeader(value = &quot;Authorization&quot;, required = false) authHeader: String?): ResponseEntity&lt;Any&gt; {&#10;        val (status, body) = service.getVehiculosAsignadosByToken(authHeader)&#10;        return ResponseEntity.status(status).body(body)&#10;    }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/kotlin/com/example/springboot_sena_kotlin1/models/DTOS/Reportes/CategoriaReporteDTO.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/kotlin/com/example/springboot_sena_kotlin1/models/DTOS/Reportes/CategoriaReporteDTO.kt" />
+              <option name="updatedContent" value="package com.example.springboot_sena_kotlin1.models.DTOS.Reportes&#10;&#10;data class CategoriaReporteDTO(&#10;    val idCategoria: Long?,&#10;    val nombreCategoria: String&#10;)&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/kotlin/com/example/springboot_sena_kotlin1/models/DTOS/Reportes/ReporteDTO.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/kotlin/com/example/springboot_sena_kotlin1/models/DTOS/Reportes/ReporteDTO.kt" />
+              <option name="updatedContent" value="package com.example.springboot_sena_kotlin1.models.DTOS.Reportes&#10;&#10;import java.time.LocalDateTime&#10;&#10;data class ReporteDTO(&#10;    val idReporte: Long?,&#10;    val idCategoriaReportes: Long,&#10;    val descripcion: String?,&#10;    val fechaCreacion: LocalDateTime,&#10;    val idUsuarios: Long&#10;)&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/kotlin/com/example/springboot_sena_kotlin1/models/DTOS/RutasAsignadasDTO.kt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/kotlin/com/example/springboot_sena_kotlin1/models/DTOS/RutasAsignadasDTO.kt" />
+              <option name="updatedContent" value="package com.example.springboot_sena_kotlin1.models.DTOS&#10;&#10;import java.time.LocalDateTime&#10;&#10;data class RutasAsignadasDTO(&#10;    val documentoIdentidad: String,&#10;    val email: String,&#10;    val placa: String,&#10;    val marcaVehiculo: String,&#10;    val tipoVehiculo: String,&#10;    val capacidad: Int,&#10;    val estadoVehiculo: String,&#10;    val fechaAsignacionInicio: LocalDateTime,&#10;    val fechaAsignacionFinalizacion: LocalDateTime,&#10;    val nombreRuta: String,&#10;    val horaInicioRuta: String,&#10;    val horaFinalizacionRuta: String,&#10;    val estadoRuta: String,&#10;    val descripcion: String&#10;)&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
