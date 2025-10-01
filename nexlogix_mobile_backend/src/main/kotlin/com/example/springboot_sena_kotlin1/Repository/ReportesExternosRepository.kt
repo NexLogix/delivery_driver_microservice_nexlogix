@@ -1,4 +1,3 @@
-
 package com.example.springboot_sena_kotlin1.Repository
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.stereotype.Repository
